@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index2</title>
+    <title>Document</title>
 </head>
 
 <body>
     <script>
-        function dumbSayHi() {
+        function sayHi() {
             var john = new Person("john");
-            console.log("Hello, " + john + "!");
-        }
-        john.dumbSayHi();
+            setTimeout(function() {
+                console.log("Hello, " + john + "!");
+            }, 200);
+        };
     </script>
 </body>
 

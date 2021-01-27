@@ -4,21 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index4.css">
     <title>index4</title>
 </head>
 
 <body>
-    <form name="form" action="#" method="POST">
-        <input type="text" name="name" id="name" required>
-        <input type="text" name="surname" id="surname" required>
-        <input type="text" name="national_no" id="national_no" required>
-        <input type="button" onclick="myFunction()" value="Submit">
+    <form name="form" action="#">
+        <ul>
+            <li>name: <br>
+                <input type="text" name="name">
+                <span id="warning"></span>
+            </li>
+            <li>surname: <br>
+                <input type="text" name="surname">
+                <span id="warning"></span>
+            </li>
+            <li>national number: <br>
+                <input type="text" name="national_no">
+                <span id="warning"></span>
+            </li>
+            <li>
+                <input type="submit" value="Submit" id="submit">
+            </li>
+        </ul>
     </form>
     <script>
-        function myFunction() {}
-        // for (var i = 0; i < inputs.length; i += 1) {
-        // var input = inputs[i];
-        // input.addEventListener( ? , ? );
+        document.getElementById("submit").addEventListener(click, function validation() {
+            for (var i = 0; i < inputs.length; i += 1) {
+                var input = inputs[i];
+                if (input.length = "") {
+                    document.getElementById("warning").innerHTML = "please enter something";
+                }
+            }
+        });
     </script>
 
 </body>

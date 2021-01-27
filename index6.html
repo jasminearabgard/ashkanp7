@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index6</title>
+</head>
+
+<body>
+    <script>
+        class Stack {
+            constructor() {
+                this.items = [];
+            }
+
+            push(element) {
+
+                    // push element into the items 
+
+                    this.items.push(element);
+                }
+                // -- -- -- -- -- -- -- -
+            peek() {
+
+                // return the top most element from the stack but doesn't delete it.
+
+                return this.items[this.items.length - 1];
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,21 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <script>
+        function validate_form() {
+            valid = true;
+
+            if (document.contact_form.contact_name.value == "") {
+                alert("Please fill in the 'Your Name' box.");
+                valid = false;
+            }
+
+            return valid;
+            if (document.contact_form.contact_surname.value == "") {
+                alert("Please fill in the 'Your SurName' box.");
+                valid = false;
+            }
+            return valid;
+        }
+    </script>
+
 </head>
 
-<body>
-    <script>
-        function sayHi() {
-            var john = new Person("john");
-            setTimeout(function() {
-                console.log("Hello, " + john + "!");
-            }, 200);
-        };
-    </script>
+<body bgcolor="#FFFFFF">
+
+    <form name="contact_form" method="post" action="/cgi-bin/articles/development/javascript/form-validation-with-javascript/contact_simple.cgi" onSubmit="return validate_form ( );">
+        <p>Your Name: <input type="text" name="contact_name"></p>
+        <p>Your Surname:<input type="text" name="content_surname"></p>
+        <p><input type="text" name="national_no"></p>
+        <p><input type="submit" name="send" value="Send Details"></p>
+
+    </form>
+
 </body>
 
 </html>

@@ -32,7 +32,7 @@
         document.getElementById("submit").addEventListener(click, function validation() {
             for (var i = 0; i < inputs.length; i += 1) {
                 var input = inputs[i];
-                if (input.length = "") {
+                if (input.length = " ") {
                     document.getElementById("warning").innerHTML = "please enter something";
                 }
             }

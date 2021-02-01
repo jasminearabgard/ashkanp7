@@ -6,15 +6,16 @@
 </head>
 
 <body>
-    <p id="result"></p>
     <script>
-        function calculate(a, b) {
-            var addition = a + b;
-            var multiplication = a * b;
+        function calculate(x, y) {
+            if (x == y) {
+                return (x + y);
+            } else {
+                return (x * y);
+            }
         }
-
-        calculate("addition")(1)(2);
-        calculate("multiplication")(2)(3);
+        console.log(calculate(1, 2));
+        console.log(calculate(2, 3));
     </script>
 </body>
 

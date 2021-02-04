@@ -25,6 +25,7 @@
                     Notification.requestPermission().then(function(p) {
                         if (p === 'granted') {
                             var notify = new Notification('Hi there!', {
+                                timeout: 6000,
                                 body: 'How are you doing?',
                             });
                         } else {

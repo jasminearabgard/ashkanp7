@@ -9,34 +9,31 @@
 </head>
 
 <body>
-    <form name="form" action="#">
+    <form name="myform" action="welcome.html" onsubmit="return validate()">
         <ul>
-            <li>name: <br>
-                <input type="text" name="name">
-                <span id="warning"></span>
-            </li>
-            <li>surname: <br>
-                <input type="text" name="surname">
-                <span id="warning"></span>
-            </li>
-            <li>national number: <br>
-                <input type="text" name="national_no">
-                <span id="warning"></span>
-            </li>
-            <li>
-                <input type="submit" value="Submit" id="submit">
-            </li>
+            <li> <input type="text" name="name" id="name" placeholder="name">
+                <label id="nameError" style="color: red; display: none;">invalid name</label></li>
+            <li><input type="text" name="surname" id="surname" placeholder="surname">
+                <label id="snameError" style="color: red; display: none;">invalid surname</label></li>
+            <li><input type="text" name="national_no" id="nationalno" placeholder="national_no">
+                <label id="national_noError" style="color: red; display: none;">invalid national number</label></li>
+            <li><input type="submit" value="submit"></li>
         </ul>
     </form>
     <script>
-        document.getElementById("submit").addEventListener(click, function validation() {
-            for (var i = 0; i < inputs.length; i += 1) {
-                var input = inputs[i];
-                if (input.length = " ") {
-                    document.getElementById("warning").innerHTML = "please enter something";
-                }
+        function validate() {
+            const name = document.getElementById("name");
+            const surname = document.getElementById("surname");
+            const nationalno = document.getElementById("nationalno");
+            if (name.value.trim() === "" || surname.value.trim() === "" || nationalno.value.trim() === "") {
+                name.style.border = "1px solid red"
+                surname.style.border = "1px solid red"
+                nationalno.style.border = "1px solid red"
+                return false
+            } else {
+                return true
             }
-        });
+        }
     </script>
 
 </body>

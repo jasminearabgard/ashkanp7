@@ -1,37 +1,42 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-
-    <script>
-        function validate_form() {
-            valid = true;
-
-            if (document.contact_form.contact_name.value == "") {
-                alert("Please fill in the 'Your Name' box.");
-                valid = false;
-            }
-
-            return valid;
-            if (document.contact_form.contact_surname.value == "") {
-                alert("Please fill in the 'Your SurName' box.");
-                valid = false;
-            }
-            return valid;
-        }
-    </script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index3</title>
 </head>
 
-<body bgcolor="#FFFFFF">
+<body onload="notifyMe()">
+    <button onclick="notifyMe()">Notify Me</button>
+    <script>
+        function notifyMe() {
+            if (!window.Notification) {
+                console.log('Browser does not support notifications.');
+            } else {
 
-    <form name="contact_form" method="post" action="/cgi-bin/articles/development/javascript/form-validation-with-javascript/contact_simple.cgi" onSubmit="return validate_form ( );">
-        <p>Your Name: <input type="text" name="contact_name"></p>
-        <p>Your Surname:<input type="text" name="content_surname"></p>
-        <p><input type="text" name="national_no"></p>
-        <p><input type="submit" name="send" value="Send Details"></p>
+                if (Notification.permission === 'granted') {
 
-    </form>
+                    var notify = new Notification('Hi there!', {
+                        body: 'How are you doing?',
+                    });
+                } else {
 
+                    Notification.requestPermission().then(function(p) {
+                        if (p === 'granted') {
+                            var notify = new Notification('Hi there!', {
+                                body: 'How are you doing?',
+                            });
+                        } else {
+                            console.log('User blocked notifications.');
+                        }
+                    }).catch(function(err) {
+                        console.error(err);
+                    });
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

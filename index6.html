@@ -13,18 +13,10 @@
             constructor() {
                 this.items = [];
             }
-
             push(element) {
-
-                    // push element into the items 
-
-                    this.items.push(element);
-                }
-                // -- -- -- -- -- -- -- -
+                this.items.push(element);
+            }
             peek() {
-
-                // return the top most element from the stack but doesn't delete it.
-
                 return this.items[this.items.length - 1];
             }
         }
